@@ -11,7 +11,7 @@ const filters = await Astro.glob('../filters/*.astro');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Refinery</title>
 
-  <style>
+  <style is:global>
     * {
       margin: 0;
       padding: 0;
@@ -47,6 +47,29 @@ const filters = await Astro.glob('../filters/*.astro');
 		<FilterPreview name="duotone">
 			<img src="https://images.unsplash.com/photo-1688843747248-4ef83aeb80a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA5NTg5MTJ8&ixlib=rb-4.0.3&q=85" alt=" ">
 		</FilterPreview>
+
+
+		<!-- <filter id="refinery-halftone"></filter>
+    <filter id="refinery-cmyk-halftone"></filter>
+    <filter id="refinery-cmyk-error"></filter>
+    <filter id="refinery-rgb-error"></filter>
+    <filter id="refinery-shatter"></filter>
+    <filter id="refinery-noise"></filter>
+    <filter id="refinery-ripple"></filter>
+    <filter id="refinery-specular"></filter>
+    <filter id="refinery-ripple-specular"></filter>
+    <filter id="refinery-ikat-vertical"></filter>
+    <filter id="refinery-ikat-horizontal"></filter>
+    <filter id="refinery-duotone"></filter>
+    <filter id="refinery-heatmap"></filter>
+    <filter id="refinery-topographic"></filter>
+    <filter id="refinery-topographic-cut"></filter>
+    <filter id="refinery-outline"></filter>
+    <filter id="refinery-metaball"></filter>
+    <filter id="refinery-puff"></filter>
+    <filter id="refinery-raindrops"></filter>
+    <filter id="refinery-wood"></filter> https://css-tricks.com/creating-patterns-with-svg-filters/
+    <filter id="refinery-water"></filter> -->
   </ul>
 
 </body>

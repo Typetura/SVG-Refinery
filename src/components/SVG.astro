@@ -4,8 +4,8 @@ const filters = await Astro.glob('../filters/*.astro');
 
 <svg id="refinery" width="0" height="0">
 
-  <style>
-    #refinery {
+  <style is:global>
+    :where(#refinery) {
       --light: yellow;
       --dark: purple;
     }
@@ -15,26 +15,5 @@ const filters = await Astro.glob('../filters/*.astro');
     {filters.map((filter) => (
       <filter.default size={24} />
     ))}
-    <!-- <filter id="refinery-halftone"></filter>
-    <filter id="refinery-cmyk-halftone"></filter>
-    <filter id="refinery-cmyk-error"></filter>
-    <filter id="refinery-rgb-error"></filter>
-    <filter id="refinery-shatter"></filter>
-    <filter id="refinery-noise"></filter>
-    <filter id="refinery-ripple"></filter>
-    <filter id="refinery-specular"></filter>
-    <filter id="refinery-ripple-specular"></filter>
-    <filter id="refinery-ikat-vertical"></filter>
-    <filter id="refinery-ikat-horizontal"></filter>
-    <filter id="refinery-duotone"></filter>
-    <filter id="refinery-heatmap"></filter>
-    <filter id="refinery-topographic"></filter>
-    <filter id="refinery-topographic-cut"></filter>
-    <filter id="refinery-outline"></filter>
-    <filter id="refinery-metaball"></filter>
-    <filter id="refinery-puff"></filter>
-    <filter id="refinery-raindrops"></filter>
-    <filter id="refinery-wood"></filter> https://css-tricks.com/creating-patterns-with-svg-filters/
-    <filter id="refinery-water"></filter> -->
   </defs>
 </svg>

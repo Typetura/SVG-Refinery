@@ -1,0 +1,10 @@
+---
+const {amplitude, offset, result} = Astro.props;
+---
+
+<feColorMatrix
+type="matrix"
+values=`${amplitude} 0  0  0  ${offset}
+       0  ${amplitude}  0  0  ${offset}
+       0  0  ${amplitude}  0  ${offset}
+       0  0  0  ${amplitude}  ${offset}` />
