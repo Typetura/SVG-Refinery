@@ -3,9 +3,11 @@ import Contrast from '../components/Contrast.astro';
 ---
 
 <filter id="refinery-vhs">
-  <feTurbulence type="fractalNoise" baseFrequency="0 0.1" numOctaves="1" result="distortion" />
+  <feTurbulence type="fractalNoise" baseFrequency="0 0.1" numOctaves="1" result="distortion-noise" />
 
-  <feDisplacementMap in="SourceGraphic" in2="distortion" scale="-3" xChannelSelector="R" yChannelSelector="G" result="distortion" />
+  <feDisplacementMap in="SourceGraphic" in2="distortion-noise" scale="-3" xChannelSelector="R" yChannelSelector="G" />
+  <Contrast amplitude="0.9" offset="-0.1" />
+  <feColorMatrix type="saturate" values="0.5" result="distortion" />
 
   <feTurbulence type="fractalNoise" baseFrequency="0.0004 0.005" numOctaves="2">
     <animate attributeName="baseFrequency" values="0.0004 0.005; 0.001 0.002; 0.0004 0.005" dur="120s" keySplines="0.5 0 0.5 1" repeatCount="indefinite" />

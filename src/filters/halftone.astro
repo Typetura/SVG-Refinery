@@ -1,0 +1,15 @@
+---
+import Contrast from '../components/Contrast.astro';
+---
+
+<filter id="refinery-halftone">
+
+  <pattern id="pattern-circles" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+    <circle fill="#000" cx="2" cy="2" r="1.5" />
+  </pattern>
+
+  <feColorMatrix type="saturate" values="0" />
+  <feGaussianBlur stdDeviation="5" />
+
+  <feComposite in2="SourceAlpha" operator="in" />
+</filter>
