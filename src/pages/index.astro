@@ -1,0 +1,53 @@
+---
+import SVG from '../components/SVG.astro';
+import FilterPreview from '../components/FilterPreview.astro';
+const filters = await Astro.glob('../filters/*.astro');
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refinery</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font: inherit;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      list-style: none;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+	<SVG />
+
+  <h1>Refinery</h1>
+  <p>Description of various filters and effects using SVG and CSS</p>
+
+  <ul>
+		<FilterPreview name="vhs">
+			<img src="https://images.unsplash.com/photo-1688843747248-4ef83aeb80a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA5NTg5MTJ8&ixlib=rb-4.0.3&q=85" alt=" ">
+		</FilterPreview>
+		<FilterPreview name="duotone">
+			<img src="https://images.unsplash.com/photo-1688843747248-4ef83aeb80a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA5NTg5MTJ8&ixlib=rb-4.0.3&q=85" alt=" ">
+		</FilterPreview>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+---
+const {name} = Astro.props;
+---
+
+<li style=`filter: url(#refinery-${name})`>
+  <slot />
+</li>

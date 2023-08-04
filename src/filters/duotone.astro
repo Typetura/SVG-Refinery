@@ -1,0 +1,10 @@
+<filter id="refinery-duotone">
+  <feFlood flood-color="var(--light, #fff)" result="light" />
+  <feFlood flood-color="var(--dark, #000)" result="dark" />
+
+  <feColorMatrix in="SourceGraphic" type="luminanceToAlpha" result="mask" />
+  <feComposite in="dark" in2="mask" operator="out" />
+  <feComposite in2="light" operator="over" />
+
+  <feComposite in2="SourceAlpha" operator="in" />
+</filter>
