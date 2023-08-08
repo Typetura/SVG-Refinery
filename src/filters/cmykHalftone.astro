@@ -13,44 +13,102 @@ import Contrast from '../components/Contrast.astro';
   <feImage width="7.5" height="7.5" xlink:href="data:image/svg+xml,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cg%20clip-path%3D%22url%28%23clip0_4371_2702%29%22%3E%0A%3Ccircle%20cx%3D%2215%22%20cy%3D%227.99512e-07%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%2015%207.99512e-07%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%227.5%22%20cy%3D%227.99512e-07%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%207.5%207.99512e-07%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%2211.25%22%20cy%3D%223.75%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%2011.25%203.75%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%2215%22%20cy%3D%227.5%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%2015%207.5%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cy%3D%227.5%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%200%207.5%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%223.75%22%20cy%3D%223.75%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%203.75%203.75%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%223.75%22%20cy%3D%2211.25%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%203.75%2011.25%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cy%3D%227.99512e-07%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%200%207.99512e-07%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%227.5%22%20cy%3D%2215%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%207.5%2015%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cy%3D%2215%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%200%2015%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%227.5%22%20cy%3D%227.5%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%207.5%207.5%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%2211.25%22%20cy%3D%2211.25%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%2011.25%2011.25%29%22%20fill%3D%22black%22%2F%3E%0A%3Ccircle%20cx%3D%2215%22%20cy%3D%2215%22%20r%3D%221.76777%22%20transform%3D%22rotate%2845%2015%2015%29%22%20fill%3D%22black%22%2F%3E%0A%3C%2Fg%3E%0A%3Cdefs%3E%0A%3CclipPath%20id%3D%22clip0_4371_2702%22%3E%0A%3Crect%20width%3D%2215%22%20height%3D%2215%22%20fill%3D%22white%22%2F%3E%0A%3C%2FclipPath%3E%0A%3C%2Fdefs%3E%0A%3C%2Fsvg%3E%0A" />
   <feTile result="Kpattern" />
 
+  <!-- C -->
   <feColorMatrix
+    result="c"
     in="SourceGraphic"
     type="matrix"
-    result="Cch"
-    values="0 1 1 0 0
-            0 1 1 0 0
-            0 1 1 0 0
-            0 0 0 1 0"
+    values="0 0 0 0 0
+            0 0 0 0 0
+            0 0 0 0 0
+            -1 0 0 1 0"
   />
+  <feFlood flood-color="#0ff" />
+  <feComposite in2="c" operator="in" />
+  <feComposite in2="Cpattern" operator="in" />
+  <feGaussianBlur stdDeviation="0.3" />
   <feColorMatrix
-    in="SourceGraphic"
-    type="matrix"
-    result="Ych"
-    values="1 1 0 0 0
-            1 1 0 0 0
-            1 1 0 0 0
-            0 0 0 1 0"
+  result="c"
+  type="matrix"
+  values="1   0   0   0  0
+          0   1   0   0  0
+          0   0   1   0  0
+          0   0   0   20  -2"
   />
+  
+  <!-- M -->
   <feColorMatrix
+    result="m"
     in="SourceGraphic"
     type="matrix"
-    result="Mch"
-    values="1 0 1 0 0
-            1 0 1 0 0
-            1 0 1 0 0
-            0 0 0 1 0"
+    values="0 0 0 0 0
+            0 0 0 0 0
+            0 0 0 0 0
+            0 -1 0 1 0"
   />
+  <feFlood flood-color="#f0f" />
+  <feComposite in2="m" operator="in" />
+  <feComposite in2="Mpattern" operator="in" />
+  <feGaussianBlur stdDeviation="0.3" />
   <feColorMatrix
-    in="SourceGraphic"
-    type="matrix"
-    result="Kch"
-    values="1 1 1 0 0
-            1 1 1 0 0
-            1 1 1 0 0
-            0 0 0 1 0"
+  result="m"
+  type="matrix"
+  values="1   0   0   0  0
+          0   1   0   0  0
+          0   0   1   0  0
+          0   0   0   20  -2"
   />
 
-  <feComposite in="Kch" in2="Kpattern" operator="out" />
-  <feGaussianBlur stdDeviation="0.5" />
+  <!-- Y -->
+  <feColorMatrix
+  result="y"
+  in="SourceGraphic"
+  type="matrix"
+  values="0 0 0 0 0
+          0 0 0 0 0
+          0 0 0 0 0
+          0 0 -1 1 0"
+  />
+  <feFlood flood-color="#ff0" />
+  <feComposite in2="y" operator="in" />
+  <feComposite in2="Ypattern" operator="in" />
+  <feGaussianBlur stdDeviation="0.3" />
+  <feColorMatrix
+  result="y"
+  type="matrix"
+  values="1   0   0   0  0
+          0   1   0   0  0
+          0   0   1   0  0
+          0   0   0   20  -2"
+  />
 
+  <!-- K -->
+  <feColorMatrix
+  result="k"
+  in="SourceGraphic"
+  type="matrix"
+  values="0 0 0 0 0
+          0 0 0 0 0
+          0 0 0 0 0
+          0 0 -2 0.25 0"
+  />
+  <feFlood flood-color="#222" />
+  <feComposite in2="k" operator="in" />
+  <feComposite in2="Kpattern" operator="in" />
+  <feGaussianBlur stdDeviation="0.4" />
+  <feColorMatrix
+  result="k"
+  type="matrix"
+  values="1   0   0   0  0
+          0   1   0   0  0
+          0   0   1   0  0
+          0   0   0   20  0"
+  />
+
+  <!-- CMYK Overprint -->
+  <feBlend in2="c" mode="darken" />
+  <feBlend in2="m" mode="darken" />
+  <feBlend in2="y" mode="multiply" />
+
+  <feComposite in2="SourceAlpha" operator="in" />
 </filter>
