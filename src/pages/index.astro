@@ -45,6 +45,43 @@ const filters = await Astro.glob('../filters/*.astro');
   <p>Description of various filters and effects using SVG and CSS</p>
 
   <ul>
+		<FilterPreview name="goo">
+      <div class="goo-div"></div>
+      <div class="goo-div"></div>
+      <style>
+        .goo-div {
+          position: absolute;
+          width: 50%;
+          height: 50%;
+          border-radius: 50%;
+          background: red;
+          inset: 0;
+          margin: auto;
+          animation: goo 20s linear infinite;
+          mix-blend-mode: overlay;
+          background: oklch(67.4% 0.37 0);
+        }
+        .goo-div:last-child {
+          animation-direction: reverse;
+          animation-delay: -9s;
+          animation-duration: 30s;
+          transform-origin: 50% center;
+        }
+        @keyframes goo {
+          0% {
+            background: oklch(67.4% 0.37 90);
+          }
+          50% {
+            transform: rotate(360deg) translatey(-50%);
+            background: oklch(67.4% 0.37 0);
+          }
+          100% {
+            transform: rotate(720deg);
+            background: oklch(67.4% 0.37 90);
+          }
+        }
+      </style>
+		</FilterPreview>
 		<FilterPreview name="cmykHalftone">
 			<img src="https://images.unsplash.com/photo-1688843747248-4ef83aeb80a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA5NTg5MTJ8&ixlib=rb-4.0.3&q=85" alt=" ">
 		</FilterPreview>
