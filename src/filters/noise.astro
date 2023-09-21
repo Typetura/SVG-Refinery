@@ -1,0 +1,16 @@
+---
+import Contrast from '../components/Contrast.astro';
+---
+
+<filter id="refinery-noise">
+  <feFlood flood-color="#000" result="flood" />
+  <feTurbulence type="fractalNoise" baseFrequency="1" numOctaves="1" result="noise" />
+  <feBlend in2="flood" mode="screen" />
+
+
+  <feColorMatrix type="saturate" values="1" />
+  <Contrast amplitude="2" offset="-0.25" />
+  <feBlend in="SourceGraphic" mode="overlay" />
+
+  <feComposite in2="SourceAlpha" operator="in" />
+</filter>
