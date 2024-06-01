@@ -1,0 +1,8 @@
+<filter id="refinery-mono">
+  <feFlood flood-color="currentColor" result="dark" />
+
+  <feColorMatrix in="SourceGraphic" type="luminanceToAlpha" result="mask" />
+  <feComposite in="dark" in2="mask" operator="out" />
+
+  <feComposite in2="SourceAlpha" operator="in" />
+</filter>
